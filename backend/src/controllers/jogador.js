@@ -1,20 +1,27 @@
-const connection=require('../database/connection');
+const connection = require('../database/connection');
 
-module.exports={
+module.exports = {
     async create(req,res) {
-        const nm_jogador=req.body.name
-        const id=crypto.randomBytes(4).toString('HEX')
-try {
-    await connection('jogadores').insert({
-        id,
-        nm_jogador,
-        domingos_mes_passado:0,
-        domingos_este_mes:0
-    })
-
-    return res.send('Sucesso')
-} catch (error) {
-    return res.send(error)
-}
-}
+        try {
+            const nm_jogador = req.body
+            if(nm_jogador)
+                console.log(nm_jogador)
+            
+        } catch (error) {
+            console.log(`erro no recebimento *${error}*`)
+            return false
+        }
+        
+        try {
+            await connection('jogadores').insert({
+                nm_jogador,
+                domingos_mes_passado: 0,
+                domingos_este_mes: 0
+            })
+            console.log('certo')
+            return res.send('Sucesso')
+        } catch (error) {
+            console.log(`erro no banco  ${error}`)
+        }
+    },
 };
