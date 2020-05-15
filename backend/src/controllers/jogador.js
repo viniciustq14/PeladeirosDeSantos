@@ -21,4 +21,10 @@ module.exports = {
             console.log(`erro no banco  ${error}`)
         }
     },
+
+    async show(req,res){
+        const jogadores= await connection('jogadores').select('*');
+
+        return res.send(jogadores);
+    }
 };
