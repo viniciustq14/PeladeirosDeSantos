@@ -8,6 +8,6 @@ routes.get('/',(req,res)=>{
 
 routes.post('/jogador',jogador.create);
 routes.get('/jogadores',jogador.show);
-
+routes.get('/jogador/:id',jogador.showJogador);
 
 module.exports=routes;
