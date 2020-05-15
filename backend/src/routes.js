@@ -7,5 +7,7 @@ routes.get('/',(req,res)=>{
 })
 
 routes.post('/jogador',jogador.create);
+routes.get('/jogadores',jogador.show);
+
 
 module.exports=routes;
