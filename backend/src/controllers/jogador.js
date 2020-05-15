@@ -26,5 +26,19 @@ module.exports = {
         const jogadores= await connection('jogadores').select('*');
 
         return res.send(jogadores);
-    }
+    },
+    async showJogador(req,res){
+       
+            const {id}=req.params;
+            console.log(id)
+       
+        try {
+            const jogadores= await connection('jogadores').where('id_jogador',id).select('*').fist();
+            return res.send(jogadores);
+            
+        } catch (error) {
+            console.log(`erro na busca ${error}`)
+        }
+
+    },
 };
