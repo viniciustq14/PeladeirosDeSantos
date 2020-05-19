@@ -30,12 +30,18 @@ module.exports = {
     async showJogador(req,res){
        
             const {id}=req.params;
-            console.log(id)
+            //console.log(id)
        
         try {
-            const jogadores= await connection('jogadores').where('id_jogador',id).select('*');
-            return res.send(jogadores);
-            
+            const jogador= await connection('jogadores').where('id_jogador',id).select('*');
+            //console.log(jogador[0].id_jogador)
+            if(jogador[0] !=null){
+                return res.send(jogador);
+
+            }
+            else{
+                return res.send('jogador nao existe' );
+            }
         } catch (error) {
             console.log(`erro na busca ${error}`)
         }
