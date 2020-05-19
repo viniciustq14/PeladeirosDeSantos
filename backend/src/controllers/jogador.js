@@ -33,7 +33,7 @@ module.exports = {
             console.log(id)
        
         try {
-            const jogadores= await connection('jogadores').where('id_jogador',id).select('*').fist();
+            const jogadores= await connection('jogadores').where('id_jogador',id).select('*');
             return res.send(jogadores);
             
         } catch (error) {
