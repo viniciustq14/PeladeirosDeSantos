@@ -12,8 +12,12 @@ module.exports={
                 qt_partidas:0
             })
         } catch (error) {
-            
+            res.send(` erroo : ${error}`);
         }
 
+    },
+
+    show(req,res){
+        res.send(`dia de jogo ${req.params}`)
     }
 }
