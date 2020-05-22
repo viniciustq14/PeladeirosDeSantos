@@ -2,7 +2,7 @@ const express=require('express')
 const routes=express.Router()
 const jogador=require('./controllers/jogador')
 const dia_jogo=require('./controllers/diaJogo')
-
+const dia_jogador=require('./controllers/diajogador')
 
 routes.get('/',(req,res)=>{
     return res.send('Peladeiros2');
@@ -14,6 +14,9 @@ routes.get('/jogador/:id',jogador.showJogador);
 
 routes.get('/dia',dia_jogo.create)
 routes.get('/dias',dia_jogo.show)
+
+routes.post('/partidas/:id/convocar',dia_jogador.convocar)
+routes.get('/paridas/:id',dia_jogador.show)
 
 
 module.exports=routes;
