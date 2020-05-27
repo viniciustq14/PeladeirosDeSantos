@@ -5,10 +5,10 @@ module.exports={
         try {
             const dt=new Date()
            console.log(`${dt.getDate()}/${(dt.getMonth()+1)}/${dt.getFullYear()}`);
-            const dia=await connection('dia_jogos').insert({dt_jogo:`${dt.getDate()}/${(dt.getMonth()+1)}/${dt.getFullYear()}`,
+            const [dia]=await connection('dia_jogos').insert({dt_jogo:`${dt.getDate()}/${(dt.getMonth()+1)}/${dt.getFullYear()}`,
             ic_ativo:true})
             console.log(dia)
-            res.redirect(`/partidas/${dia.id_jogo}`)
+            res.redirect(`/partidas/${dia}`)
         } catch (error) {
             res.send(`erro ${error}`)
         }
