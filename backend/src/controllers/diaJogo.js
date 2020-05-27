@@ -24,12 +24,10 @@ module.exports={
     },
 
     async deletar(req,res){
-        try {
-            const [id]=req.params
+       
+            const {id}=req.params
             console.log(id);
-        } catch (error) {
-            console.log(error)
-        }
+      
         
         try {
             
