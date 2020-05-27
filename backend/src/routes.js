@@ -14,9 +14,10 @@ routes.get('/jogador/:id',jogador.showJogador);
 
 routes.get('/dia',dia_jogo.create)
 routes.get('/dias',dia_jogo.show)
+routes.delete('dia/:id',dia_jogo.deletar)
 
 routes.post('/partidas/:id/convocar',dia_jogador.convocar)
-routes.get('/paridas/:id',dia_jogador.show)
+routes.get('/partidas/:id',dia_jogador.show)
 
 
 module.exports=routes;
