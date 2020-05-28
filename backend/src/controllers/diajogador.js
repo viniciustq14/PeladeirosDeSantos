@@ -11,7 +11,9 @@ module.exports={
                 id_jogador,
                 qt_partidas:0
             })
-            res.send('convocado')
+
+            const jogadores=await connection('diaJogadores').where('id_diaJogo',id_jogo).select('*')
+            res.send('convocado',jogadores)
         } catch (error) {
             res.send(` erroo : ${error}`);
         }
