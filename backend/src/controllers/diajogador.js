@@ -11,13 +11,15 @@ module.exports={
                 id_jogador,
                 qt_partidas:0
             })
+            res.send('convocado')
         } catch (error) {
             res.send(` erroo : ${error}`);
         }
 
     },
 
-    show(req,res){
-        res.send(`dia de jogo ${req.params}`)
+    async show(req,res){
+        const {id_jogo}=req.params
+        res.send(`dia de jogo ${id_jogo}`)
     }
 }
