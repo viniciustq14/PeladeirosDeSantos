@@ -3,7 +3,7 @@ const connection = require('../database/connection');
 module.exports = {
     async create(req,res) {
        
-            const {nm_jogador} = req.body
+            const {nm_jogador,cd_telefone} = req.body
             if(nm_jogador)
                 console.log(nm_jogador)
             
@@ -12,6 +12,7 @@ module.exports = {
         try {
             await connection('jogadores').insert({
                 nm_jogador,
+                cd_telefone,
                 domingos_mes_passado: 0,
                 domingos_este_mes: 0,
             })
