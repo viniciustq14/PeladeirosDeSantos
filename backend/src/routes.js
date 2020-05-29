@@ -16,7 +16,7 @@ routes.get('/dia',dia_jogo.create)
 routes.get('/dias',dia_jogo.show)
 routes.delete('/dia/:id',dia_jogo.deletar)
 
-routes.post('/partidas/:id/convocar',dia_jogador.convocar)
+routes.post('/partidas/:id',dia_jogador.convocar)
 routes.get('/partidas/:id',dia_jogador.show)
 
 
