@@ -40,7 +40,7 @@ module.exports={
         ]
         const {id}=req.params
         console.log(id)
-        const escalado=await connection('diaJogadores').
+        const escalado=await connection('diaJogadores').where('diaJogadores.id_diaJogo',id).
         innerJoin('jogadores','diaJogadores.id_jogador','=','jogadores.id_jogador').
         select('jogadores.nm_jogador')
 
