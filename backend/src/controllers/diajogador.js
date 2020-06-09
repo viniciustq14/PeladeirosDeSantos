@@ -30,6 +30,20 @@ module.exports={
         const tabelas=await connection('diaJogadores').select('*');
         console.log(tabelas)
 
-        res.send(`dia de jogo ${id_jogo.id}`)
+        res.send(tabelas)
+    },
+
+    async escalar(req,res){
+        const times=[
+            timeA=  [],
+            timeB=[]
+        ]
+        const {id}=req.params
+        console.log(id)
+        const escalado=await connection('diaJogadores').
+        innerJoin('jogadores','diaJogadores.id_jogador','=','jogadores.id_jogador').
+        select('jogadores.nm_jogador')
+
+        return res.send(escalado);
     }
 }
