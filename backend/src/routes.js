@@ -18,6 +18,7 @@ routes.delete('/dia/:id',dia_jogo.deletar)
 
 routes.post('/partidas/:id',dia_jogador.convocar)
 routes.get('/partidas/:id',dia_jogador.show)
+routes.get('/partidas',dia_jogador.escalar)
 
 
 module.exports=routes;
