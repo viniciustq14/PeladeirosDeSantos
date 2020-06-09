@@ -8,7 +8,7 @@ module.exports={
             const [dia]=await connection('dia_jogos').insert({dt_jogo:`${dt.getDate()}/${(dt.getMonth()+1)}/${dt.getFullYear()}`,
             ic_ativo:true})
             console.log(dia)
-            res.redirect(`/partidas/${dia}`)
+            res.send({dia})
         } catch (error) {
             res.send(`erro ${error}`)
         }
