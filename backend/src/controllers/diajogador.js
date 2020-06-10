@@ -45,10 +45,10 @@ module.exports={
         select('jogadores.nm_jogador').limit(4).
         orderBy([{column:'qt_partidas'},{column:'dt_escalado'}]);
 
-        /*escalado.map(jogadores=>{
-            const jogador= await connection('jogadores').where('nm_jogador',jogadores.nm_jogador);
-            console.log(jogador);
-        })*/
+        escalado.map(jogadores=>{
+            const jogador= connection('jogadores').where('nm_jogador',jogadores.nm_jogador).select('*');
+             console.log(jogador);
+        })
 
         return res.send(escalado);
     }
