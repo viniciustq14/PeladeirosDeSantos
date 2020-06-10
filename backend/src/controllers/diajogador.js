@@ -42,7 +42,13 @@ module.exports={
         console.log(id)
         const escalado=await connection('diaJogadores').where('diaJogadores.id_diaJogo',id).
         innerJoin('jogadores','diaJogadores.id_jogador','=','jogadores.id_jogador').
-        select('jogadores.nm_jogador')
+        select('jogadores.nm_jogador').limit(4).
+        orderBy([{column:'qt_partidas'},{column:'dt_escalado'}]);
+
+        /*escalado.map(jogadores=>{
+            const jogador= await connection('jogadores').where('nm_jogador',jogadores.nm_jogador);
+            console.log(jogador);
+        })*/
 
         return res.send(escalado);
     }
