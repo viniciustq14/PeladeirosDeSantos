@@ -42,12 +42,22 @@ module.exports={
         console.log(id)
         const escalado=await connection('diaJogadores').where('diaJogadores.id_diaJogo',id).
         innerJoin('jogadores','diaJogadores.id_jogador','=','jogadores.id_jogador').
-        select('jogadores.nm_jogador').limit(4).
+        select(['jogadores.nm_jogador','diaJogadores.id_jogador','diaJogadores.qt_partidas']).limit(4).
         orderBy([{column:'qt_partidas'},{column:'dt_escalado'}]);
 
-        escalado.map(jogadores=>{
-            const jogador= connection('jogadores').where('nm_jogador',jogadores.nm_jogador).select('*');
-             console.log(jogador);
+        escalado.map(async jogadores=>{
+           // const jogador= await connection('jogadores').where('nm_jogador',jogadores.nm_jogador).select('*');
+           //  console.log(jogador);
+            try {
+                await connection('diaJogadores').
+                where('id_diaJogo','=',id,'id_jogador','=',jogadores.id_jogador).
+                update({
+                       qt_partidas:(jogadores.qt_partidas++)
+                })
+                
+            } catch (error) {
+                console.log(`erro : ${error}`)
+            }
         })
 
         return res.send(escalado);
