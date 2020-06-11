@@ -50,13 +50,15 @@ module.exports={
         select(['jogadores.nm_jogador','diaJogadores.id_jogador','diaJogadores.qt_partidas']).limit(4).
         orderBy([{column:'diaJogadores.qt_partidas',order:'asc'},{column:'diaJogadores.dt_escalado',order:'asc'}]);
         
+        console.log(escalado)
+
         escalado.map(async jogadores=>{
             // const jogador= await connection('jogadores').where('nm_jogador',jogadores.nm_jogador).select('*');
-            //  console.log(jogador);
+             console.log(jogadores.id_jogador);
             try {
                 //console.log(jogadores.qt_partidas)
                 await connection('diaJogadores').
-                where('id_diaJogo','=',id,'id_jogador','=',jogadores.id_jogador).
+                where({id_diaJogo:id,id_jogador:jogadores.id_jogador}).
                 update({
                     qt_partidas:jogadores.qt_partidas+1
                 })
