@@ -67,11 +67,18 @@ module.exports={
                 console.log(`erro : ${error}`)
             }
         })
-        console.log(await connection('diaJogadores').where('diaJogadores.id_diaJogo',id).
-         innerJoin('jogadores','diaJogadores.id_jogador','=','jogadores.id_jogador').
-         select(['jogadores.nm_jogador','diaJogadores.id_jogador',
-         'diaJogadores.qt_partidas','diaJogadores.dt_escalado']))
+       
 
         return res.send(escalado);
+    },
+     async mostrarJogadores(req,res){
+        
+        const {id}=req.params
+        const jogadores =await connection('diaJogadores').where('diaJogadores.id_diaJogo',id).
+        innerJoin('jogadores','diaJogadores.id_jogador','=','jogadores.id_jogador').
+        select(['jogadores.nm_jogador','diaJogadores.id_jogador',
+        'diaJogadores.qt_partidas'])
+
+        res.send(jogadores)
     }
 }
