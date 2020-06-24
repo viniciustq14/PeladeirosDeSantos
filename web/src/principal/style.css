@@ -1,5 +1,15 @@
 .cabecalho {
    text-align: center;
+   border:1;
    border-radius: 0.4 ;
+   display: grid;
+   padding: 20px 50px; 
+   background-color: #A9A9A9;
+   border-style: double;
+   margin:10px 60px;
+}
+
+.menu{
+   
 }
 
