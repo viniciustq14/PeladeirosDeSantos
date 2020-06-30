@@ -2,7 +2,8 @@ button{
    background-color: #32CD32;
    width: 60%;
    color:white;
-   height: 45%;
+   height: 80%;
    margin-top: 5%;
+   align-items: center;
 }
 
