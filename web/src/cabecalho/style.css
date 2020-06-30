@@ -1,0 +1,23 @@
+.cabecalho {
+    text-align: center;
+    border:1;
+    border-radius: 0.4 ;
+    display: grid;
+    padding: 20px 50px; 
+    background-color: #A9A9A9;
+    border-style: double;
+    margin:10px 60px;
+ }
+ 
+ .menu{
+    display:inline;
+    padding:10px 40px;
+    columns: 2fr;
+ }
+
+ #jogo{
+     float: right
+ }
+ #jogadores{
+     float: left;
+ }
