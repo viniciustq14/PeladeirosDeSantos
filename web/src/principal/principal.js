@@ -1,26 +1,15 @@
 import React from 'react';
 
 import './style.css';
+import Cabecalho from '../cabecalho/Cabecalho'
 
 function Principal() {
   return (
-    <div className='cabecalho'>
-    <header>
-        <h1>Peladeiros De Santos</h1>
-    </header>
-    <div className='menu'>
-      <div>
-        <h2>jogadores</h2>
-        
-      </div>
-      <div>
-        <h2>
-        dias de partidas
-
-        </h2>
-      </div>
-    </div>
-      </div>
+    <>
+    <Cabecalho/>
+    <button>Cadastrar Jogadores</button>
+    <button>Iniciar Dia De Jogo </button>
+    </>
   );
 }
 
