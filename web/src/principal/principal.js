@@ -6,9 +6,12 @@ import Cabecalho from '../cabecalho/Cabecalho'
 function Principal() {
   return (
     <>
-    <Cabecalho/>
-    <button>Cadastrar Jogadores</button>
-    <button>Iniciar Dia De Jogo </button>
+      <Cabecalho />
+      <div className="botoes">
+        <button>Cadastrar Jogadores</button>
+        <button>Iniciar Dia De Jogo </button>
+
+      </div>
     </>
   );
 }
