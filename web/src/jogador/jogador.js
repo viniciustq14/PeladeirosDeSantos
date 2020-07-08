@@ -11,11 +11,11 @@ function Jogador(){
          {teste.map(Jogador=>(
 
             <div className='jogador'>
-                <p>Nome : {Jogador.name}</p> <p>Telefone : {Jogador.telefone}</p> <p>domingos jogados : {Jogador.jogos} </p>
+                <p><strong>Nome :</strong> {Jogador.name} <strong>Telefone :</strong> {Jogador.telefone}  <strong>domingos jogados :</strong> {Jogador.jogos} </p>
             </div>
          ))}
             
-
+        <button className='add'>+</button>    
      </div>
  )
 }
