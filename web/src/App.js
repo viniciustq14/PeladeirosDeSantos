@@ -8,8 +8,8 @@ import './App.css';
 function App() {
   return (
    <div>
-     <Cabecalho/>
      <BrowserRouter>
+     <Cabecalho/>
             <Switch>
                 <Route path='/' exact component={Principal}/>
                 <Route path='/jogador' component={Jogador}/>
