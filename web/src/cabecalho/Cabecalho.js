@@ -6,19 +6,23 @@ function Cabecalho() {
     return (
         <div className='cabecalho'>
             <header>
-                <h1>Peladeiros De Santos</h1>
+                <Link to='/'>
+                    <h1>Peladeiros De Santos</h1>
+                </Link>
             </header>
             <div className='menu'>
-                <Link to='jogador'>
+                <Link to='/jogador'>
                     <div id='jogadores'>
                         <h2>jogadores</h2>
                     </div>
                 </Link>
-                <div id='jogo'>
-                    <h2>
-                        dias de partidas
+                <Link to='/jogos'>
+                    <div id='jogo'>
+                        <h2>
+                            dias de partidas
                     </h2>
-                </div>
+                    </div>
+                </Link>
             </div>
         </div>
     );
